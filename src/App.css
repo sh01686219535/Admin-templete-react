@@ -121,6 +121,7 @@ header .d-text{
   right:240px !important;
   left: auto !important;
   width: 300px !important;
+  top: 60px !important;
 }
 .head{
   padding: 0 0 0 12px !important;
@@ -194,12 +195,12 @@ header .d-text{
   color: #000;
 }
 .main .sidebarWrapper{
-  width: 25%;
-  flex: 0 0 30% ;
+  width: 20%;
+  flex: 0 0 23% ;
   transition: all 0.3s ease-in-out;
 }
 .main .sidebarWrapper .sidebar{
-  width: 25%;
+  width: 22%;
   height: 100vh;
   position: fixed;
   top: 80px;
@@ -245,7 +246,9 @@ header .d-text{
 }
 .main .sidebarWrapper .sidebar ul li button.active{
   background-color: #ccc8c8;
-
+}
+.main .sidebarWrapper .sidebar ul li button.active .icon svg{
+  color: #0858f7 !important;
 }
 .main .sidebarWrapper .sidebar ul li button.active .arrow{
   transform: rotate(90deg);
@@ -369,4 +372,109 @@ header .d-text{
 .logoutWrapper .logoutBox button svg{ 
   font-size: 18px !important;
   margin-right: 5px;
+}
+.content{
+  width: 80%;
+  flex: 0 0 76%;
+}
+.right-content{
+  padding: 95px 10px ;
+}
+.dashboardWrapper{
+  width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.dashboardWrapper .dashboardBox {
+  width: 47%;
+  height: 170px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left !important;
+  position: relative;
+  color: #fff;
+}
+.dashboardWrapper .dashboardBox .chart{
+  opacity: 0.1;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.dashboardWrapper .dashboardBox .chart svg{
+  font-size: 110px;
+  color: #000;
+}
+.dashboardWrapper .dashboardBox .col1 h4{
+  font-size: 16px;
+  font-weight: 500; 
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.dashboardWrapper .dashboardBox .col1 span{
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 45px;
+}
+.dashboardWrapper .dashboardBox .icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom right, rgba(0,0,0,0.0), rgba(0,0,0,0.2));
+}
+.dashboardWrapper .dashboardBox .icon svg{
+  font-size: 36px;
+  color: #fff;
+  opacity: 0.5;
+}
+.dashboardWrapperBox .box{
+  width: 100%;
+  height: 100%;
+}
+.dashboardBox .month{
+
+}
+.dashboardBox .month h4{
+  margin: 0 0 0 0;
+}
+.dashboardWrapper .dashboardBox .dot{
+  margin: 0 0 0 0;
+  font-size: 23px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+}
+#long-menu .MuiButtonBase-root svg{
+  font-size: 17px !important;
+  color: #000 !important;
+  margin-right:10px !important ;
+}
+.graphBox {
+  background-image: linear-gradient(#1a50b5,#2a6ff7);
+  border-radius: 10px;
+  padding: 25px;
+}
+.graphBox h6{
+  font-weight: 600;
+  font-size: 16px;
+}
+.graphBox .toggleIcon svg{
+  color: #fff !important;
+  font-size: 20px !important;
+  opacity: 1 !important;
+}
+.graphBox p{
+  font-size: 13px;
+  color: #fff;
+  opacity: 0.7;
 }

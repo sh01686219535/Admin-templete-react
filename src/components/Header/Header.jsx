@@ -46,16 +46,18 @@ function Header() {
             <header className="flex items-center">
                 <div className="w-full head-main">
                     <div className="flex items-center">
-                        <div className="w-1/4">
+                        <div className="w-1/5">
                             <Link to={'/'} className="flex items-center">
                                 <img src={logo} className="logo" />
                                 <span className="d-text">HOTASH</span>
                             </Link>
                         </div>
-                        <div className="w-1/4 flex items-center">
-                            <Button className="head-menu-btn-1 rounded">
+                        <div className="w-1/3 flex items-center">
+                           <div>
+                           <Button className="head-menu-btn-1 rounded">
                                 <MdOutlineMenuOpen />
                             </Button>
+                           </div>
                             <Searchbox />
                         </div>
                         <div className="w-2/4 flex items-center justify-end">
@@ -63,7 +65,6 @@ function Header() {
                                 <MdOutlineLightMode />
                             </Button>
                             <Button className="head-menu-btn-1 rounded"
-
                             >
                                 <IoCartOutline />
                             </Button>
