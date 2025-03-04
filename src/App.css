@@ -11,11 +11,13 @@ body{
 header{
   width: 100%;
   height: 80px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 header .logo{
   width: 45px;
@@ -477,4 +479,89 @@ header .d-text{
   font-size: 13px;
   color: #fff;
   opacity: 0.7;
+}
+.cart{
+  margin: 20px 0;
+  border-radius: 10px;
+  padding: 20px 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cart .hd{
+  font-size: 18px;
+  font-weight: bold;
+  color: #403e57;
+}
+.cardFilter{
+  margin-top:15px;
+}
+.cardFilter .col{
+  margin: 0 10px;
+}
+.cardFilter .col h4{
+  font-size: 14px;
+  color: #403e57;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.table {
+  margin: 15px 0;
+}
+.table thead{
+  background-color: rgb(44, 120, 229);
+  color: #fff;
+}
+.table thead tr th,.table tbody tr td{
+  padding: 13px 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-size: 15px !important;
+
+}
+.table tbody tr td{
+  color: #403e57;
+  font-weight: 500;
+  vertical-align: middle !important;
+}
+.table tbody tr:nth-child(even) {
+  background-color: rgb(237 239 255 / 7%);
+  transition: all 0.3s ease-in-out;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: rgb(247, 247, 247);
+  transition: all 0.3s ease-in-out;
+}
+.table tbody .actions button{
+  min-width: 35px !important;
+  width: 35px !important;
+  height: 35px !important;
+  margin: 0 3px !important;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.table tbody .actions button.secondary{
+  background: rgba(203, 60, 231, 0.3) !important;
+}
+.table tbody .actions button.success{
+  background: rgba(26, 159, 231, 0.3) !important;
+}
+.table tbody .actions button.error{
+  background: rgba(241, 17, 231, 0.3) !important;
+}
+.table tbody .actions button svg{
+  font-size: 35px !important;
+}
+.info  h6{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: norwap;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.tableFooter{
+  padding-bottom: 20px;
+}
+.tableFooter .pagination{
+  margin-left: auto;
 }

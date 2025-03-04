@@ -11,8 +11,21 @@ import Button from "@mui/material/Button";
 import { HiDotsVertical } from "react-icons/hi";
 import { Chart } from "react-google-charts";
 
+import InputLabel from '@mui/material/InputLabel';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { FaEye } from "react-icons/fa";
+import { MdEdit } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
+
+import Pagination from '@mui/material/Pagination';
+
 function Dashboard() {
     const [anchorEl, setAnchorEl] = useState(null);
+    const [showBy, setShowby] = useState('');
+    const [catBy, setCatby] = useState('');
+
     const open = Boolean(anchorEl);
     const ITEM_HEIGHT = 48;
 
@@ -36,9 +49,9 @@ function Dashboard() {
     var options = {
         'backgroundColor': 'transparent',
         'is3D': true,
-        'chartArea':{'width':'100%','height':'100%'}
+        'chartArea': { 'width': '100%', 'height': '100%' }
     };
-    
+
     return (
         <div>
             <div className="right-content w-full">
@@ -94,13 +107,294 @@ function Dashboard() {
                                 chartType="PieChart"
                                 data={data}
                                 options={options}
-                              
+
                             />
                         </div>
                     </div>
                 </div>
+                <div className="cart">
+                    <h3 className="hd">Best Selling Products</h3>
+                    <div className="w-full cardFilter flex">
+                        <div className="w-1/4 col">
+                            <h4>SHOW BY</h4>
+                            <FormControl sx={{ m: 1, minWidth: '100%' }} size="small">
+                                <Select
+                                    className="w-full"
+                                    value={showBy}
+                                    onChange={(e) => setShowby(e.target.value)}
+                                    displayEmpty
+                                    inputProps={{ 'aria-label': 'Without label' }}
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
+                                </Select>
+                            </FormControl>
+
+                        </div>
+                        <div className="w-1/4 col">
+                            <h4>Category BY</h4>
+                            <FormControl sx={{ m: 1, minWidth: '100%' }} size="small">
+                                <Select
+                                    className="w-full"
+                                    value={catBy}
+                                    onChange={(e) => setCatby(e.target.value)}
+                                    displayEmpty
+                                    inputProps={{ 'aria-label': 'Without label' }}
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+                    </div>
+
+                    <div className="">
+                        <table className="table w-full ">
+                            <thead className="">
+                                <tr>
+                                    <th scope="col" className="px-6 py-3">
+                                        UID
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        PRODUCT
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        CATEGORY
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        BRAND
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        PRICE
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        STOCK
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        RATING
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        ORDER
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        SALES
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        ACTION
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr className="">
+                                    <td className="px-6 py-4">
+                                        #1
+                                    </td>
+                                    <td scope="row" className="flex items-center">
+                                        <div className="product-img">
+
+                                        </div>
+                                        <div className="info">
+                                            <h6>Tops and skirt set for</h6>
+                                            <p>Women's exclusive sum</p>
+                                        </div>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        Womans
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        richman
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <del className="old block"> $21.00</del>
+                                        <span className="new text-red-600 block"> $21.00</span>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        Silver
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        4.9(16)
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        380
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        $2999
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <div className="actions flex items-center">
+                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Button className="success" color="success"><MdEdit /></Button>
+                                            <Button className="error" color="error"><MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr className="">
+                                    <td className="px-6 py-4">
+                                        #2
+                                    </td>
+                                    <td scope="row" className="">
+                                        Microsoft Surface Pro
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        Womans
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        richman
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <del className="old block"> $21.00</del>
+                                        <span className="new text-red-600 block"> $21.00</span>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        White
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        4.9(16)
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        380
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        $1999
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <div className="actions flex items-center">
+                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Button className="success" color="success"><MdEdit /></Button>
+                                            <Button className="error" color="error"><MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr className="">
+                                    <td className="px-6 py-4">
+                                        #3
+                                    </td>
+                                    <td scope="row" className="">
+                                        Magic Mouse 2
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        Womans
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        richman
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <del className="old block"> $21.00</del>
+                                        <span className="new text-red-600 block"> $21.00</span>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        Black
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        4.9(16)
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        380
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        $99
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <div className="actions flex items-center">
+                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Button className="success" color="success"><MdEdit /></Button>
+                                            <Button className="error" color="error"><MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr className="">
+                                    <td className="px-6 py-4">
+                                        #4
+                                    </td>
+                                    <td scope="row" className="">
+                                        Google Pixel Phone
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        Womans
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        richman
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <del className="old block"> $21.00</del>
+                                        <span className="new text-red-600 block"> $21.00</span>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        Gray
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        4.9(16)
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        380
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        $799
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <div className="actions flex items-center">
+                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Button className="success" color="success"><MdEdit /></Button>
+                                            <Button className="error" color="error"><MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="px-6 py-4">
+                                        #6
+                                    </td>
+                                    <td scope="row" className="">
+                                        Apple Watch 5
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        Womans
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        richman
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <del className="old block"> $21.00</del>
+                                        <span className="new text-red-600 block"> $21.00</span>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        Red
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        4.9(16)
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        380
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        $999
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <div className="actions flex items-center">
+                                            <Button className="secondary" color="secondary"><FaEye /></Button>
+                                            <Button className="success" color="success"><MdEdit /></Button>
+                                            <Button className="error" color="error"><MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div className="flex tableFooter">
+                            <Pagination count={10} color="primary" className="pagination" showFirstButton showLastButton/>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
+
     );
 }
 
