@@ -7,8 +7,10 @@ import { MdMessage } from "react-icons/md";
 import { FaBell } from "react-icons/fa6";
 import { IoSettings } from "react-icons/io5";
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import {  useState } from 'react';
 import { IoMdLogOut } from "react-icons/io";
+// import { MyContext } from '../../App';
+import { FaUserAlt } from "react-icons/fa";
 
 
 const Sidebar = () => {
@@ -19,7 +21,7 @@ const Sidebar = () => {
         setActiveTab(index);
         setIsToggleSubMenu(!isToggleSubMenu);
     }
-
+    // const context = useContext(MyContext);
     return (
         <>
             <div className="sidebar">
@@ -87,19 +89,19 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/">
+                        <Link to="/login">
                             <Button className={`w-full ${activeTab === 6 && isToggleSubMenu === true  ? 'active' : ''}`} onClick={() => isOpenSubmenu(6)}>
-                                <span className='icon'><MdDashboard /></span>
-                                Dashboard
+                                <span className='icon'><FaUserAlt /></span>
+                                Login
                                 <span className='arrow'><IoIosArrowForward /></span>
                             </Button>
                         </Link>
                     </li>
                     <li>
-                        <Link to="/">
+                        <Link to="/register">
                             <Button className={`w-full ${activeTab === 7 && isToggleSubMenu === true  ? 'active' : ''}`} onClick={() => isOpenSubmenu(7)}>
-                                <span className='icon'><FaProductHunt /></span>
-                                products
+                                <span className='icon'><FaUserAlt /></span>
+                                Register
                                 <span className='arrow'><IoIosArrowForward /></span>
                             </Button>
                         </Link>

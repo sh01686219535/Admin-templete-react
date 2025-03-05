@@ -5,7 +5,6 @@ import { MdOutlineMenuOpen } from "react-icons/md";
 import { MdMenu } from "react-icons/md";
 import Searchbox from "../SearchBox/Searchbox";
 import { MdOutlineLightMode } from "react-icons/md";
-import { MdDarkMode } from "react-icons/md";
 import { IoCartOutline } from "react-icons/io5";
 import { MdOutlineMail } from "react-icons/md";
 import { FaRegBell } from "react-icons/fa6";
@@ -18,8 +17,9 @@ import { FaShieldAlt } from "react-icons/fa";
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Divider } from "@mui/material";
+import { MyContext } from "../../App";
 
 
 
@@ -41,6 +41,7 @@ function Header() {
     const handleDropnotification = () => {
         handlenotificationClose(false);
     }
+    const context = useContext(MyContext);
     return (
         <div>
             <header className="flex items-center">
@@ -54,14 +55,21 @@ function Header() {
                         </div>
                         <div className="w-1/3 flex items-center">
                            <div>
-                           <Button className="head-menu-btn-1 rounded">
-                                <MdOutlineMenuOpen />
+                           <Button className="head-menu-btn-1 rounded"
+                           onClick={()=>context.setIstoggleSidebar(!context.isToggleSidebar)}
+                           >
+                            {
+                                context.isToggleSidebar === false ? <MdOutlineMenuOpen /> :
+                                <MdMenu/>
+                            }
                             </Button>
                            </div>
                             <Searchbox />
                         </div>
                         <div className="w-2/4 flex items-center justify-end">
-                            <Button className="head-menu-btn-1 rounded">
+                            <Button className="head-menu-btn-1 rounded"
+                            onClick={()=>context.setThemeMode(!context.themeMode)}
+                            >
                                 <MdOutlineLightMode />
                             </Button>
                             <Button className="head-menu-btn-1 rounded"

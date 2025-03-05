@@ -8,6 +8,12 @@ body{
   font-family: "Open Sans", serif !important;
   background: #ebe9e9;
 }
+body.dark{
+  background-color: #112143 !important;
+}
+body.dark header{
+  background-color: #112143 !important;
+}
 header{
   width: 100%;
   height: 80px;
@@ -46,12 +52,25 @@ header .d-text{
 .head-menu-btn-1:hover svg{
   color: #3276ff !important;  
 }
+body.dark .head-menu-btn-1 {
+  background-color: #12254e !important;  
+}
+body.dark .head-menu-btn-1 svg{
+  background-color: #12254e !important;  
+  color: #fff !important;
+}
 .search-box{
   width: 300px !important;
   border-radius: 10px !important;
   background: #f0f5ff !important;
   height: 40px;
   padding: 5px 15px;
+}
+body.dark .search-box{
+  background-color: #12254e !important;  
+}
+body.dark .search-box input::-webkit-input-placeholder,body.dark .search-box svg{
+  color: #fff !important;
 }
 .search-box input{
   background-color: transparent;
@@ -201,6 +220,13 @@ header .d-text{
   flex: 0 0 23% ;
   transition: all 0.3s ease-in-out;
 }
+.main .sidebarWrapper.toggle{
+  width: 0% !important;
+  flex: 0 0 0% !important;
+}
+body.dark .main .sidebarWrapper .sidebar{
+  background-color: #112143 !important;
+}
 .main .sidebarWrapper .sidebar{
   width: 22%;
   height: 100vh;
@@ -212,6 +238,10 @@ header .d-text{
   overflow-y: scroll;
   overflow-x: hidden;
   padding-bottom: 40px !important;
+  transition: all 0.3s ease-in-out;
+}
+.main .sidebarWrapper.toggle .sidebar{
+  left: -100%;
 }
 .main .sidebarWrapper .sidebar::-webkit-scrollbar{
   width: 3px !important;
@@ -262,6 +292,12 @@ header .d-text{
   width: 25px;
   height: 25px;
   margin-right: 10px;
+}
+body.dark .main .sidebarWrapper .sidebar ul li button *{
+  color: #fff !important;
+}
+body.dark .main .sidebarWrapper .sidebar ul li button {
+  color: #fff !important;
 }
 .main .sidebarWrapper .sidebar ul li button *{
   color: #5e5d72 !important;
@@ -378,6 +414,11 @@ header .d-text{
 .content{
   width: 80%;
   flex: 0 0 76%;
+  transition: all 0.3s ease-in-out;
+}
+.content.toggle{
+  width: 100% !important;
+  flex: 0 0 100% !important;
 }
 .right-content{
   padding: 95px 10px ;
@@ -564,4 +605,109 @@ header .d-text{
 }
 .tableFooter .pagination{
   margin-left: auto;
+}
+.loginSection{
+  width: 100%;
+  height: 100vh;
+  padding: 35px 25px;
+  background: url(./assets/images/login.png) repeat-x top center #fff;
+}
+.full{
+  max-width: 100% !important;
+  width: 100% !important;
+  flex: 0 0 100% !important;
+}
+.loginSection .wrapper.register{
+    height: 600px !important;
+}
+.loginSection .wrapper{
+  width: 400px;
+  height: 480px;
+  background-color: darkgray;
+  margin: 0 auto;
+  opacity: 0.6;
+  border-radius: 15px;
+}
+.logo h5{
+  font-size: 24px !important;
+  color: #403e57 !important;
+  margin-bottom: 15px;
+}
+.wrapper .login-from{
+  padding:30px;
+}
+.wrapper .form{
+  width: 80%;
+  margin: auto;
+}
+.form input{
+  background: #ebf6ff;
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+}
+.form input::placeholder{
+  color: #000;
+  font-size: 20px;
+}
+.form button {
+  background: green;
+  color: white;
+  width: 100%;
+  padding: 7px 0;
+  font-size: 19px;
+  margin: 15px 0;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.wrapper .login-from .or-line{
+  margin: 20px 0;
+}
+.wrapper .login-from .text{
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  line-height: 50px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+.wrapper .login-from .line{
+  width: 30%;
+  height: 1px;
+  background-color:rgba(0, 0, 0, 1);
+}
+.google-btn button{
+    color: #000 !important;
+    font-weight: 600;
+    padding: 10px 30px !important;
+    border: 2px solid green !important;
+    border-radius: 10px;
+}
+.google-btn button img{
+  margin-right: 10px;
+  background-color: darkgray  !important;
+}
+.login-bottom{
+  width: 400px;
+  background-color: darkgray;
+  margin: 18px auto;
+  opacity: 0.6;
+  border-radius: 15px;
+}
+.login-bottom .login-btn {
+
+}
+.login-bottom .login-bottom-text {
+  padding: 12px 0px;
+  font-size: 20px;
+  font-weight: 500;
+}
+  .login-bottom .login-btn {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0 10px;
+  color: #000;
+  cursor: pointer;
 }

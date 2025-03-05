@@ -49,7 +49,7 @@ function Dashboard() {
     var options = {
         'backgroundColor': 'transparent',
         'is3D': true,
-        'chartArea': { 'width': '100%', 'height': '100%' }
+        'chartArea': { 'width': '70%', 'height': '100%' }
     };
 
     return (
@@ -387,6 +387,8 @@ function Dashboard() {
                             </tbody>
                         </table>
                         <div className="flex tableFooter">
+                            <p>showing <b>12</b> of <b>60</b> results</p>
+
                             <Pagination count={10} color="primary" className="pagination" showFirstButton showLastButton/>
                         </div>
                     </div>
